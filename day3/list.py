@@ -1,6 +1,7 @@
 # Grouped Data Types --> List, Tuple, Set, Dictionary
 
-
+# Lists are mutable, ordered and they allow duplicates
+#   edit items directly, can use index to access elements
 # Lists    0        1           2
 fruits = ['apple', 'pear', 'watermelon',
           'kiwi', 'banana', 'apple', 'mango']  # Initilize
