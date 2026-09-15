@@ -12,6 +12,20 @@ marks_in_maths = float(input("Enter your marks in Maths: "))
 obtained_marks = marks_in_eng + marks_in_maths + marks_in_sci
 percentage = (obtained_marks/300) * 100
 
+if (percentage >= 80 and percentage < 100):
+    division = "Distinction"
+elif (percentage >= 70 and percentage < 80):
+    division = "First Division"
+elif (percentage >= 60 and percentage < 70):
+    division = "Second Division"
+elif (percentage >= 40 and percentage < 60):
+    division = "Third Division"
+elif (percentage < 40 and percentage >= 0):
+    division = "Not Graded"
+else:
+    division = "Invalid"
+
+
 print(f"""
     -----------------Marksheet-------------
     Your name: {name}
@@ -23,4 +37,5 @@ print(f"""
     ---------------------------------------
     Obtained Marks: {obtained_marks}
     Percentage: {percentage:.2f}
+    Grade: {division}
 """)
