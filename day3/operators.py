@@ -17,6 +17,7 @@ num2 = 3
 # num1 += 5  # num1 = num1+5
 # num1 -= 5  # num1 = num1-5
 
+
 # Comparision Operators
 # print(num1 == num2) #Equals to
 # print(num1 != num2) #Not Equals to
@@ -26,27 +27,27 @@ num2 = 3
 # print(num1 <= num2)  # Less than or equals to
 
 # Logical operators
-# AND (&& / and)
+# AND (and)
 # A  B
 #   0  0 --> 0
 #   0  1 --> 0
 #   1  0 --> 0
 #   1  1 --> 1
 
-# OR (|| or)
+# OR (or)
 # A  B
 #   0  0 --> 0
 #   0  1 --> 1
 #   1  0 --> 1
 #   1  1 --> 1
 
-# NOT (! / not)
+# NOT (not)
 # A
 #   0 --> 1
 #   1 --> 0
 
-# if (num1 > 5 or num2 > 5):
-#     print("At least one numbers is greater than 5")
+if (num1 > 5 and num2 > 5):
+    print("All the numbers are greater than 5")
 
 # Bitwise
 print(num1 & num2)  # Bitwise AND operator
