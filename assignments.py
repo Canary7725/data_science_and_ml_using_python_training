@@ -139,7 +139,7 @@
 # secret = 7
 # count = 0
 
-# while True:
+# while (True):
 #     guess = int(input("Enter your guess: "))
 #     count = count + 1
 
