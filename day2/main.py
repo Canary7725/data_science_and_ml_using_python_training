@@ -33,35 +33,54 @@ def isPass(marks):
         return False
 
 
-name = input("Enter your name: ")
-roll = int(input("Enter your Roll Number: "))
+try:
+    name = input("Enter your name: ")
+except (ValueError):
+    print("Enter a string/Invalid input")
+try:
+    roll = int(input("Enter your Roll Number: "))
+except (ValueError):
+    print("Enter a int number")
 
-marks_in_eng = float(input("Enter your marks in English: "))
-marks_in_sci = float(input("Enter your marks in Science: "))
-marks_in_maths = float(input("Enter your marks in Maths: "))
+try:
+    marks_in_eng = float(input("Enter your marks in English: "))
+    marks_in_sci = float(input("Enter your marks in Science: "))
+    marks_in_maths = float(input("Enter your marks in Maths: "))
+except (ValueError):
+    print("Enter float type")
+try:
+    obtained_marks = calculateTotal(marks_in_eng, marks_in_maths, marks_in_sci)
 
-obtained_marks = calculateTotal(marks_in_eng, marks_in_maths, marks_in_sci)
+    percentage = calculatePercentage(obtained_marks=obtained_marks)
 
-percentage = calculatePercentage(obtained_marks=obtained_marks)
+    division = calculateDivision(percentage=percentage)
 
-division = calculateDivision(percentage=percentage)
+    if (isPass(marks_in_sci) and isPass(marks_in_maths) and isPass(marks_in_eng)):
+        result = "Pass"
+    else:
+        result = "Fail"
 
-if (isPass(marks_in_sci) and isPass(marks_in_maths) and isPass(marks_in_eng)):
-    result = "Pass"
-else:
-    result = "Fail"
+    print(f"""
+        -----------------Marksheet-------------
+        Your name: {name}
+        Your Roll: {roll}
+        ---------------------------------------
+        Marks in English: {marks_in_eng}
+        Marks in Science: {marks_in_sci}
+        Marks in Maths: {marks_in_maths}
+        ---------------------------------------
+        Obtained Marks: {obtained_marks}
+        Percentage: {percentage:.2f}
+        Grade: {division}
+        Result:{result}
+    """)
 
-print(f"""
-    -----------------Marksheet-------------
-    Your name: {name}
-    Your Roll: {roll}
-    ---------------------------------------
-    Marks in English: {marks_in_eng}
-    Marks in Science: {marks_in_sci}
-    Marks in Maths: {marks_in_maths}
-    ---------------------------------------
-    Obtained Marks: {obtained_marks}
-    Percentage: {percentage:.2f}
-    Grade: {division}
-    Result:{result}
-""")
+
+except (ValueError):
+    print("Enter a proper value")
+
+except (ZeroDivisionError):
+    print("Cannot be divided by zero")
+
+except:
+    print("Something went wrong")

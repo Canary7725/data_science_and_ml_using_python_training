@@ -1,3 +1,4 @@
+# <---------Question1---------->
 # Ask the user for two numbers and an operator (`+`, `-`, `*`, `/`).
 # Print the result. Handle division by zero with a friendly message instead of crashing.
 # num1 = int(input("Enter first number: "))
@@ -18,7 +19,7 @@
 # else:
 #     print("Invalid operator")
 
-
+# <---------Question2---------->
 # Ask for the bill amount and a tip percentage (default 10% if left blank).
 # Print the tip amount and total, formatted to 2 decimal places.
 
@@ -35,6 +36,8 @@
 #     Total Tip Amount: {tip_amount}
 #     Total Amount: {total_amount}
 # """)
+
+# <---------Question3---------->
 
 # Ask for weight (kg) and height (m).
 # Compute BMI (`weight / height ** 2`) and print it formatted to 1 decimal place,
@@ -57,7 +60,7 @@
 # else:
 #     print("Something went wrong")
 
-
+# <---------Question4---------->
 # Ask for three side lengths. Determine if they form a valid triangle,
 # and if so, whether it's equilateral, isosceles, or scalene.
 
@@ -75,6 +78,7 @@
 # else:
 #     print("Invalid Triangle")
 
+# <---------Question5---------->
 # Store a username and password. Ask the user to log in.
 # Use nested conditions to give a specific message for "wrong username," "wrong password," and "success."
 # Ask repeatedly until both the username and password are right.
@@ -94,6 +98,7 @@
 #     print("Login Sucessful")
 #     break
 
+# <---------Question6---------->
 
 # Check if the input number is prime or composite.
 
@@ -111,6 +116,7 @@
 #     else:
 #         print("Composite")
 
+# <---------Question7---------->
 
 # Given a list of tuples like `[("Sita", 88), ("Ram", 95), ("Maya", 91)]`,
 # find and print the name and score of the student with the highest score —
@@ -128,6 +134,7 @@
 
 # print(name, score)
 
+# <---------Question8---------->
 
 # Number Guessing Game**
 # The program picks a secret number (hardcode one). Loop, asking the user to guess:

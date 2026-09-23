@@ -10,8 +10,8 @@ student_record = {
 # Safe access of value; if key doesn't exists then returns None or the default value
 # print(student_record.get("age"))
 
-# student_record["name"] = "Chloe"  # Updating value using key
-# student_record["age"] = 16  # Adding a new entry onto the dictionary
+student_record["name"] = "Chloe"  # Updating value using key
+student_record["age"] = 16  # Adding a new entry onto the dictionary
 
 
 # print(student_record)

@@ -15,15 +15,15 @@ square = map(lambda x: x**2, my_list)
 print(list(square))
 
 # filter(function_that_returns_true_or_false,iterable)
-odd_list = filter(lambda x: x % 2 == 1, my_list)
+odd_list = filter(isOdd(), my_list)
 print(list(odd_list))
 
 
 def fibo(n):
-    if n <= 1:
+    if n <= 1:  # Base Case
         return n
     else:
-        return fibo(n-1) + fibo(n-2)
+        return fibo(n-1) + fibo(n-2)  # Recursive Case
 
 
 for i in range(10):  # 0->6

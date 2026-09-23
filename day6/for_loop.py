@@ -9,7 +9,6 @@ for item in my_list:
 
 # for item in range(100):  # List Traversal
 #     print(item)
-
 # range(*starting_value, ending_value, *skipping_value)
 # for i in range(10, 1):
 #     print(i)
@@ -55,7 +54,7 @@ print(largest)
 
 # my_list = [1, 2, 3, 4, 5, 6]
 
-# for index, number in enumerate(my_list):
+# for index, number in enumerate(my_list): #List traversal with index
 #     print(f"Index:{index} | Value:{number}")
 
 # name = ["Adam", "Chloe"]
