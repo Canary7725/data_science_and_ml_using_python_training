@@ -6,9 +6,9 @@ student_record = {
 }  # Key-Value pair
 
 
-# print(student_record["roll"])  # Accessing value by key similar to list.
+print(student_record["roll"])  # Accessing value by key similar to list.
 # Safe access of value; if key doesn't exists then returns None or the default value
-# print(student_record.get("age"))
+print(student_record.get("age"))
 
 student_record["name"] = "Chloe"  # Updating value using key
 student_record["age"] = 16  # Adding a new entry onto the dictionary

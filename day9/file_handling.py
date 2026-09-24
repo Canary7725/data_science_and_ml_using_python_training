@@ -7,4 +7,4 @@ with open("day9/sample.txt", "a") as file:
 
 with open("day9/sample.txt", "r") as file:
     text = file.read()
-print(type(text))
+print(text)

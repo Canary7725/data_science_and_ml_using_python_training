@@ -1,8 +1,3 @@
-This is content that is to be added onto the sample file.
-This is a sample file_handling program.
-This is a sample file_handling program.
-This is a sample file_handling program.
-This is content that is to be added onto the sample file.
 This is a sample file_handling program.
 This is a sample file_handling program.
 This is a sample file_handling program.
