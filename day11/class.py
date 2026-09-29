@@ -22,4 +22,5 @@ vehicle1 = Vehicle("Red", 500)
 print(vehicle1.color)  # Printing attribute directly
 
 vehicle1.go_forward()
+
 vehicle1.go_backwards()  # Printing an attribute using a method

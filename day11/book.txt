@@ -1,0 +1,3 @@
+XYZ,Adam,True
+ABC,Adam,True
+STR,Adam,False
