@@ -14,22 +14,23 @@ class Book:
             file.write(f"{self.title},{self.author},{self.is_available}\n")
         print("Book saved into file.")
 
-    def lendBook(self):
-        books = loadBooks()
-        print(self.is_available)
+    def lendBook(self):  # self --> book(abc,Adam,True) Book that is to be lent
+        # --['XYZ,Adam,True', 'ABC,Adam,True', 'STR,Adam,False']
         if not self.is_available:
-            print("The book has already been lent. It is not available at the moment.")
-            return
-        for i in range(len(books)):
-            book_detail = books[i].split(",")
+            print("The book isn't available to be lent at the moment.")
+        all_books = loadBooks()
 
+        for i in range(len(all_books)):  # 0,1,2
+            book_detail = all_books[i].split(",")  # -->['abc','Adam',True]
+            # all_books[1]='ABC,Adam,True' -->string
             if book_detail[0].lower() == self.title.lower():
                 book_detail[2] = "False"
-                books[i] = ",".join(book_detail)
-                break
+                all_books[i] = ",".join(book_detail)
+                # all_books[1]=,.join(['ABC','Adam',False])
+        # all_books=['XYZ,Adam,True', 'ABC,Adam,False', 'STR,Adam,False']
 
         with open("day11/book.txt", "w") as file:
-            for book in books:
+            for book in all_books:
                 file.write(f"{book}\n")
         print("Here's your book. Please return it by September 30.")
 
@@ -41,11 +42,11 @@ class Book:
             self.is_available = True
 
 
-def findBook(title):
+def findBook(title):  # xyz
     books = loadBooks()
-
-    for item in books:
-        book_details = item.split(",")
+    print(books)
+    for item in books:  # item --> 'XYZ,Adam,True'
+        book_details = item.split(",")  # -->['XYZ','Adam','True']
 
         if (book_details[0].lower() == title.lower()):
 
@@ -54,12 +55,13 @@ def findBook(title):
 
             return book
 
+    return None
+
 
 def loadBooks():
     final_list = []
     with open("day11/book.txt", "r") as file:
         text = file.read()
-        # print(text.split("\n"))
         final_list = text.split("\n")
         final_list = [item for item in final_list if len(item) > 2]
         return final_list
@@ -90,11 +92,11 @@ menu = """
 while True:
     print(menu)
     try:
-        choice = int(input("Enter  a choice(1-4): "))
+        choice = int(input("Enter  a choice(1-5): "))
 
         if (choice == 5):
             break
-        if (choice == 1):
+        elif (choice == 1):
             title = input("Enter title of the book: ")
             author = input("Enter author of the book: ")
             availability = input("Is the book available?(Y/N): ")
@@ -107,8 +109,8 @@ while True:
 
         elif (choice == 3):
             title = input("Enter book title to lend: ")
-            book = findBook(title=title)
-
+            book = findBook(title=title)  # title:abc
+            # book is an object with attributes-->abc,Adam,True
             if book is None:
                 print("Book Not Found in file")
             else:
@@ -121,3 +123,14 @@ while True:
             raise ValueError
     except ValueError:
         print("Please enter a integer between 1 and 4.")
+
+
+# Update Logic:
+# --ask user input for which book to update
+# -- find the book, if found return a book object else None
+# -- load every line of the file as an element of an all_books list
+# -- Iterate over every line in the file to find the title to update
+# -- Spilt every line by "," so that we can access every element as a list
+# -- If file's title and input title matches then update the required value
+# -- Update that particular index of the all_books list with the updated value using join function
+# -- Write the all_books into the file in "w" mode of access
