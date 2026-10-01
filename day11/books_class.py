@@ -9,7 +9,7 @@ class Book:
         self.author = author
         self.is_available = is_available
 
-    def insertBook(self):
+    def insertBook(self):  # book1.insertBook()
         with open("day11/book.txt", "a") as file:
             file.write(f"{self.title},{self.author},{self.is_available}\n")
         print("Book saved into file.")
