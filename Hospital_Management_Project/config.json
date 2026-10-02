@@ -1,4 +1,5 @@
 {
-    "filepath":"Hospital_Management_Project/contacts.txt"
+    "patient_filepath":"Hospital_Management_Project/patient_details.txt",
+    "doctor_filepath":"Hospital_Management_Project/doctor_details.txt"
 }
 
