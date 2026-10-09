@@ -88,6 +88,7 @@ print(unique_items_list)
 for item in unique_items_list:
     df.loc[df['quantity'].isna() & df['item'].isin([item]),'quantity'] = df.loc[df['item'].isin([item]) & df['quantity'].notna(),'quantity'].median()
 
+df['total_spent']=df['quantity']*df['price_per_unit']
 
 # print(df.loc[df['item'].isin(['Sandwich']) & df['quantity'].isna()])
 # df.to_csv("data/cleaned_data.csv") #Writes the processed df(dataframe variable) onto a csv file based on the given filepath 
