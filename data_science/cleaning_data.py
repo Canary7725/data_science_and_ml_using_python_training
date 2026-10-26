@@ -1,6 +1,6 @@
 import pandas as pd
 
-df=pd.read_csv("data/dirty_cafe_sales.csv") # if headers=True, doesn't recognize any row as column_names
+df=pd.read_csv("data/dirty_cafe_sales.csv") # if headers=False, doesn't recognize any row as column_names
 
 
 #Normalize Header (Price Per Unit --> price_per_unit)
@@ -10,6 +10,7 @@ renamed_column_dict={}
 
 for column in columns_to_be_renamed:
     renamed_column_dict[column]=column.lower().replace(" ","_")
+
 
 
 df=df.rename(columns=renamed_column_dict)
@@ -48,7 +49,7 @@ df['location']=df['location'].astype('str')
 
 #inplace=True makes sure the original dataframe drops the rows as well.
 
-#df_dropped=df.drop(df.loc[df['item'].isna() & df['price_per_unit'].isna()].index.to_list(),inplace=True)
+df_dropped=df.drop(df.loc[df['item'].isna() & df['price_per_unit'].isna()].index.to_list(),inplace=True)
 #df_dropped variable catches all the rows that are deleted by the drop in df.
 
 df.drop(df.loc[df['item'].isna() & df['price_per_unit'].isna()].index.to_list(),inplace=True)
@@ -83,15 +84,16 @@ df['quantity'] = df['total_spent'] / df['price_per_unit']
 # print(df.loc[df['item'].isin(['Tea']),'quantity'].median())
 
 unique_items_list = df['item'].unique().tolist()
-print(unique_items_list)
+# print(unique_items_list)
 
 for item in unique_items_list:
-    df.loc[df['quantity'].isna() & df['item'].isin([item]),'quantity'] = df.loc[df['item'].isin([item]) & df['quantity'].notna(),'quantity'].median()
+    df.loc[df['quantity'].isna() & df['item'].isin([item]),'quantity'] = df.loc[df['item'].isin([item]) & df['quantity'].notna(),'quantity'].median() #2.0
 
 df['total_spent']=df['quantity']*df['price_per_unit']
 
 # print(df.loc[df['item'].isin(['Sandwich']) & df['quantity'].isna()])
-# df.to_csv("data/cleaned_data.csv") #Writes the processed df(dataframe variable) onto a csv file based on the given filepath 
+df.to_csv("data/cleaned_data.csv") #Writes the processed df(dataframe variable) onto a csv file based on the given filepath 
+
 # Juice     3.0               1110
 # Coffee    2.0               1108
 # Cake      3.0               1085
