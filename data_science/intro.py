@@ -19,3 +19,14 @@
 #to_datetime-->pd
 #fillna()
 #notna()
+
+
+
+# np.array
+# matplotlib
+# matrix operation * and @
+# mean(axis)
+# mean median mode
+# variance, skewness
+# correlation
+# multivariate normal distribution
