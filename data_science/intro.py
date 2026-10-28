@@ -27,6 +27,6 @@
 # matrix operation * and @
 # mean(axis)
 # mean median mode
-# variance, skewness
+# variance, skewness np.std
 # correlation
 # multivariate normal distribution
