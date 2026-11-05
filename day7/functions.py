@@ -33,7 +33,7 @@
 # print(f"{maximum},{minimum}")
 
 
-# Variable score --> local or global
+# Variable scope --> local or global
 # Local variable can only be used on the functions they are defined at..
 # num5 = 9  # 00010
 
