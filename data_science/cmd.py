@@ -27,3 +27,6 @@
 # install --> pip install <package_name> [=<version_name>]
 # uninstall --> pip uninstall <package_name>
 # pip freeze > requirements.txt --> Writes all the installed packages name and version in a .txt file
+
+
+#Running a Streamlit script: streamlit run <file_path>
