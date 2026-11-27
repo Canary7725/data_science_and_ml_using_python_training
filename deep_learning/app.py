@@ -22,7 +22,6 @@ if uploaded_file:
 
     prediction=model.predict(img_array) # Input -->7 prediction = [0,0,0,0,0,0,0,1,0,0] 
     predicted_class=np.argmax(prediction)
-
     st.success(f"Predicted Digit is : {predicted_class}")
 
     
